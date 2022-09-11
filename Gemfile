@@ -1,8 +1,10 @@
 source "https://rubygems.org"
+	ruby "2.7.4"
 
 # A DSL for quickly creating web applications
 # https://github.com/sinatra/sinatra
 gem "sinatra", "~> 2.1"
+gem 'sinatra-contrib', '~> 2.2', '>= 2.2.2',require: false
 
 
 # A fast and simple web server
@@ -42,6 +44,10 @@ group :development do
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
+
+	group :production do
+ 	  gem 'pg', '~> 1.4', '>= 1.4.3'
+	end
 end
 
 
